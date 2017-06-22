@@ -1,3 +1,6 @@
+# Project dist directories
+dist/
+
 # Logs
 logs
 *.log
