@@ -41,6 +41,20 @@ module.exports = {
 				test: /\.js$/,
 				loader: "source-map-loader"
 			},
+			{
+				test: /\.(jpg|png)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[path][name].[ext]',
+				},
+			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[path][name].[ext]',
+				},
+			}
 		]
 	},
 };
