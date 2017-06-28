@@ -32,13 +32,18 @@ module.exports = merge({
 			// embedded within the compiled javascript bundle and added
 			// as a blob:// uri at runtime.
 			{
-				test: /\.(less|css)$/,
-				use: ['style-loader', 'css-loader?sourceMap', 'less-loader?sourceMap']
+				test: /\.(scss|css)$/,
+				use: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
 			}
 		]
 	},
 
 	devServer: {
-		hot: true
+		hot: true,
+		watchOptions: {
+			ignored: /node_modules/,
+			aggregateTimeout: 1000,
+			poll: 2000
+		}
 	}
 }, baseConfig);

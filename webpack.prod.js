@@ -11,7 +11,7 @@ module.exports = merge(baseConfig, {
 	],
 	module: {
 		rules: [
-			// All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+			// All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
 			{
 				test: /\.tsx?$/,
 				loaders: [
@@ -24,10 +24,10 @@ module.exports = merge(baseConfig, {
 			// styles.css and a <link rel="stylesheet"> tag to be
 			// appended to the index.html HEAD at compile time
 			{
-				test: /\.(less|css)$/,
+				test: /\.(scss|css)$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
-					use: ['css-loader', 'less-loader']
+					use: ['css-loader', 'sass-loader']
 				})
 			},
 		]
