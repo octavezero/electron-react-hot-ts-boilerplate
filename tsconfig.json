@@ -15,7 +15,7 @@
 		"importHelpers": true,
 		"noEmitHelpers": true,
 		"moduleResolution": "node",
-		"module": "commonjs",
+		"module": "es2015",
 		"target": "es5",
 		"jsx": "react"
 	},
