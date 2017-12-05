@@ -2,31 +2,33 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
-const baseConfig = require('./webpack.common');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const exp = require('./webpack.config.base');
 
-module.exports = merge({
-	entry: [
-		"react-hot-loader/patch",
-	],
+let prodMain = merge({
+	module: {
+		rules: [
+			// All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+			{
+				test: /\.tsx?$/,
+				loaders: [
+					"ts-loader"
+				],
+			},
+		]
+	},
+}, exp[0]);
 
-	plugins: [
-		new webpack.NamedModulesPlugin(),
-		new webpack.HotModuleReplacementPlugin()
-	],
 
-	devtool: "eval",
-
+let prodRenderer = merge({
 	module: {
 		rules: [
 			// All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
 			{
 				test: /\.tsx?$/,
 				loaders: [
-					"react-hot-loader/webpack",
-					"awesome-typescript-loader"
+					"ts-loader"
 				],
-				exclude: path.resolve(__dirname, 'node_modules'),
-				include: path.resolve(__dirname, "src"),
 			},
 			// This will cause the compiled CSS (and sourceMap) to be
 			// embedded within the compiled javascript bundle and added
@@ -37,13 +39,6 @@ module.exports = merge({
 			}
 		]
 	},
+}, exp[1]);
 
-	devServer: {
-		hot: true,
-		watchOptions: {
-			ignored: /node_modules/,
-			aggregateTimeout: 1000,
-			poll: 2000
-		}
-	}
-}, baseConfig);
+module.exports = [prodMain, prodRenderer];

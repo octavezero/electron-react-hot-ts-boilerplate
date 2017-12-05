@@ -1,27 +1,26 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './App';
+import App from './app';
 
-const rootEl = document.getElementById('root');
+const root = document.getElementById('app');
 ReactDOM.render(
 	<AppContainer>
 		<App />
 	</AppContainer>,
-	rootEl
+	root
 );
 
 // Hot Module Replacement API
 if (module.hot) {
-	module.hot.accept('./App', () => {
+	module.hot.accept('./app', () => {
 		// tslint:disable-next-line:no-require-imports
-		const NextApp = require<RequireImport>('./App').default;
+		const HotApp = require('./app').default;
 		ReactDOM.render(
 			<AppContainer>
-				<NextApp />
+				<HotApp />
 			</AppContainer>
-			,
-			rootEl
+			, root
 		);
 	});
 }

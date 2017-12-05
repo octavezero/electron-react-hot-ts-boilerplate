@@ -2,31 +2,22 @@
 	"compilerOptions": {
 		"removeComments": false,
 		"preserveConstEnums": true,
-		"declaration": false,
-		"outDir": "./dist/",
 		"sourceMap": true,
-		"noImplicitAny": true,
 		"suppressImplicitAnyIndexErrors": true,
 		"allowSyntheticDefaultImports": true,
 		"strictNullChecks": true,
 		"noUnusedLocals": true,
 		"noImplicitThis": true,
 		"noUnusedParameters": true,
-		"importHelpers": true,
-		"noEmitHelpers": true,
+		"noImplicitAny": true,
 		"moduleResolution": "node",
-		"module": "es2015",
-		"target": "es5",
+		"noEmitOnError": true,
+		"module": "es6",
+		"target": "es6",
 		"jsx": "react"
 	},
-	"files": [
-		"./declarations.d.ts",
-		"./src/index.tsx"
-	],
-	"exclude": [
-		"node_modules",
-		"dist"
-	],
+
+	// This is opinionated for me. Change it as per your wish. (Don't Forget to change tslint config as well)
 	"formatCodeOptions": {
 		"indentSize": 4,
 		"tabSize": 4
