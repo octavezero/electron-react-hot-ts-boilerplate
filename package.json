@@ -1,8 +1,8 @@
 {
   "name": "electron-react-hot-ts-boilerplate",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Live Editing Environment for Electron Apps using React, React-Hot-Loader, Typescript and Webpack",
-  "main": "main.js",
+  "main": "./dist/main.js",
   "scripts": {
     "start": "electron ./dist/main.js",
     "devstart": "cross-env ELECTRON_DEV=dev electron ./dist/main.js",
