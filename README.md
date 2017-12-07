@@ -4,17 +4,17 @@
 ## Installation
 
 ```
-npm install
+yarn install // replace yarn with npm if desired.
 ```
 ## Usage
 ### Development with hot reloading
 ```
-npm run server		//to start the hot reloading server
-npm run hmr		//to open electron. run from seperate shell instance
+yarn run server		//to compile main and start the hot reloading server
+yarn run devstart		//to open electron in devmode with hmr.
 ```
 
 ### Compiling the files for distribution
 ```
-npm run build 		//to compile the files without hot reloading into dist/
-npm start 		//to run electron with compiled files
+yarn run build 		//to compile the files without hot reloading into dist/
+yarn run start 		//to run electron with compiled files
 ```
