@@ -8,7 +8,6 @@
 		"strictNullChecks": true,
 		"noUnusedLocals": true,
 		"noImplicitThis": true,
-		"noUnusedParameters": true,
 		"noImplicitAny": true,
 		"moduleResolution": "node",
 		"noEmitOnError": true,
